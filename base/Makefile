@@ -1,7 +1,7 @@
 CPP = g++
 CPPFLAGS = -Wall -Wextra -Werror -pedantic
 LIBS = -llemon
-SRC = $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
+SRC = $(wildcard src/*.cpp) $(wildcard src/*/*.cpp) $(wildcard src/*/*/*.cpp)
 OBJ = $(SRC:.cpp=.o)
 BIN = questa
 
