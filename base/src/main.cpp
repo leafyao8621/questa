@@ -1,17 +1,29 @@
 #include <iostream>
 
-#include "simulator/simulator.h"
+#include "runner/runner.h"
+
+double s[54] = {
+    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.91, 0.92,
+    0.93, 0.94, 0.95, 0.96, 0.961, 0.962, 0.963, 0.964, 0.965,
+    0.966, 0.967, 0.968, 0.969, 0.97, 0.971, 0.972, 0.973,
+    0.974, 0.975, 0.976, 0.977, 0.978, 0.979, 0.98, 0.981,
+    0.982, 0.983, 0.984, 0.985, 0.986, 0.987, 0.988, 0.989,
+    0.99, 0.991, 0.992, 0.993, 0.994, 0.995, 0.996, 0.997,
+    0.998, 0.999
+};
 
 int main() {
-    int *total_queue_length = new int[1000000];
+    int *total_queue_length = new int[540];
     try {
-        QUESTA::Simulator simulator;
-        simulator.init(2, 1000);
-        simulator(
-            QUESTA::Simulator::Mode::LOG_MAX_PLUS_QUEUE_LENGTH,
-            0.9,
+        QUESTA::Runner runner(32);
+        runner(
+            QUESTA::Simulator::Mode::QUEUE_LENGTH,
+            s,
+            54,
             1000000,
-            1000000,
+            10,
+            10,
+            1000,
             total_queue_length
         );
     } catch (QUESTA::Simulator::Err err) {
@@ -26,7 +38,7 @@ int main() {
         }
         return -1;
     }
-    for (size_t i = 0; i < 1000000; ++i) {
+    for (size_t i = 0; i < 540; ++i) {
         std::cout << total_queue_length[i] << std::endl;
     }
     delete[] total_queue_length;
