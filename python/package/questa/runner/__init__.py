@@ -1,5 +1,6 @@
-from ._run import run
+from ._run import run, run_rep
 
 __all__ = [
-    "run"
+    "run",
+    "run_rep"
 ]
