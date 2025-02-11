@@ -14,10 +14,10 @@ namespace QUESTA {
         size_t n;
     public:
         enum Mode {
-            QUEUE_LENGTH,
-            MAX_MINUS_QUEUE_LENGTH,
-            MAX_PLUS_QUEUE_LENGTH,
-            LOG_MAX_PLUS_QUEUE_LENGTH
+            MAX_WEIGHT,
+            MAX_SIZE,
+            MSMW,
+            MSMW_LOG
         };
         enum Err {
             OUT_OF_MEMORY,
@@ -25,22 +25,22 @@ namespace QUESTA {
         };
         void init(size_t n, int seed);
     private:
-        void run_queue_length(
+        void run_max_weight(
             double s,
             size_t warmup,
             size_t n_iter,
             int *total_queue_length);
-        void run_max_minus_queue_length(
+        void run_max_size(
             double s,
             size_t warmup,
             size_t n_iter,
             int *total_queue_length);
-        void run_max_plus_queue_length(
+        void run_msmw(
             double s,
             size_t warmup,
             size_t n_iter,
             int *total_queue_length);
-        void run_log_max_plus_queue_length(
+        void run_msmw_log(
             double s,
             size_t warmup,
             size_t n_iter,

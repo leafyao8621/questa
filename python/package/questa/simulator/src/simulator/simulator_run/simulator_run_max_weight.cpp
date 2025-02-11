@@ -1,6 +1,6 @@
 #include "../simulator.h"
 
-void QUESTA::Simulator::run_queue_length(
+void QUESTA::Simulator::run_max_weight(
     double s,
     size_t warmup,
     size_t n_iter,
@@ -9,7 +9,8 @@ void QUESTA::Simulator::run_queue_length(
     lemon::MaxWeightedPerfectMatching<lemon::ListGraph> mwm(this->lg, em);
     int cur_total_queue_length = 0;
     for (size_t i = 0; i < warmup; ++i) {
-        mwm.run();
+        mwm.init();
+        mwm.start();
         for (int j = 0; j < this->lg.maxEdgeId(); ++j) {
             int flag =
                 em[this->lg.edgeFromId(j)] > 0 &&
@@ -25,7 +26,8 @@ void QUESTA::Simulator::run_queue_length(
     }
     int *ii = total_queue_length;
     for (size_t i = 0; i < n_iter; ++i, ++ii) {
-        mwm.run();
+        mwm.init();
+        mwm.start();
         for (int j = 0; j < this->lg.maxEdgeId(); ++j) {
             int flag =
                 em[this->lg.edgeFromId(j)] > 0 &&

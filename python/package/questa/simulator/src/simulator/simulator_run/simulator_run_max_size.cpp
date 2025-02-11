@@ -1,6 +1,6 @@
 #include "../simulator.h"
 
-void QUESTA::Simulator::run_max_plus_queue_length(
+void QUESTA::Simulator::run_max_size(
     double s,
     size_t warmup,
     size_t n_iter,
@@ -30,7 +30,7 @@ void QUESTA::Simulator::run_max_plus_queue_length(
         }
         for (int j = 0; j < this->lg.maxEdgeId(); ++j) {
             em1[this->lg.edgeFromId(j)] =
-                em[this->lg.edgeFromId(j)] ? max + em[lg.edgeFromId(j)] : 0;
+                em[this->lg.edgeFromId(j)] ? max - em[lg.edgeFromId(j)] : 0;
         }
     }
     int *ii = total_queue_length;
@@ -55,7 +55,7 @@ void QUESTA::Simulator::run_max_plus_queue_length(
         }
         for (int j = 0; j < this->lg.maxEdgeId(); ++j) {
             em1[this->lg.edgeFromId(j)] =
-                em[this->lg.edgeFromId(j)] ? max + em[lg.edgeFromId(j)] : 0;
+                em[this->lg.edgeFromId(j)] ? max - em[lg.edgeFromId(j)] : 0;
         }
         *ii = cur_total_queue_length;
     }

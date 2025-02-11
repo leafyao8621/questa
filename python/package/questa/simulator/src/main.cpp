@@ -45,33 +45,33 @@ static PyObject* simulate(PyObject* self, PyObject* args) {
     try {
         QUESTA::Simulator simulator;
         simulator.init(n, seed);
-        if (!strcmp(mode, "QUEUE_LENGTH")) {
+        if (!strcmp(mode, "MAX_WEIGHT")) {
             simulator(
-                QUESTA::Simulator::Mode::QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MAX_WEIGHT,
                 s,
                 warmup,
                 n_iter,
                 (int*)PyArray_DATA((PyArrayObject*)total_queue_length)
             );
-        } else if (!strcmp(mode, "MAX_MINUS_QUEUE_LENGTH")) {
+        } else if (!strcmp(mode, "MAX_SIZE")) {
             simulator(
-                QUESTA::Simulator::Mode::MAX_MINUS_QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MAX_SIZE,
                 s,
                 warmup,
                 n_iter,
                 (int*)PyArray_DATA((PyArrayObject*)total_queue_length)
             );
-        } else if (!strcmp(mode, "MAX_PLUS_QUEUE_LENGTH")) {
+        } else if (!strcmp(mode, "MSMW")) {
             simulator(
-                QUESTA::Simulator::Mode::MAX_PLUS_QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MSMW,
                 s,
                 warmup,
                 n_iter,
                 (int*)PyArray_DATA((PyArrayObject*)total_queue_length)
             );
-        } else if (!strcmp(mode, "LOG_MAX_PLUS_QUEUE_LENGTH")) {
+        } else if (!strcmp(mode, "MSMW_LOG")) {
             simulator(
-                QUESTA::Simulator::Mode::LOG_MAX_PLUS_QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MSMW_LOG,
                 s,
                 warmup,
                 n_iter,

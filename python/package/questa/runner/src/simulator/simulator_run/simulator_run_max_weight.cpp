@@ -1,6 +1,6 @@
 #include "../simulator.h"
 
-void QUESTA::Simulator::run_queue_length(
+void QUESTA::Simulator::run_max_weight(
     double s,
     size_t warmup,
     size_t n_iter,

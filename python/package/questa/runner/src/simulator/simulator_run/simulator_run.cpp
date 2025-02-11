@@ -7,17 +7,17 @@ void QUESTA::Simulator::operator()(
     size_t n_iter,
     int *total_queue_length) {
     switch (mode) {
-    case Mode::QUEUE_LENGTH:
-        this->run_queue_length(s, warmup, n_iter, total_queue_length);
+    case Mode::MAX_WEIGHT:
+        this->run_max_weight(s, warmup, n_iter, total_queue_length);
         break;
-    case Mode::MAX_MINUS_QUEUE_LENGTH:
-        this->run_max_minus_queue_length(s, warmup, n_iter, total_queue_length);
+    case Mode::MAX_SIZE:
+        this->run_max_size(s, warmup, n_iter, total_queue_length);
         break;
-    case Mode::MAX_PLUS_QUEUE_LENGTH:
-        this->run_max_plus_queue_length(s, warmup, n_iter, total_queue_length);
+    case Mode::MSMW:
+        this->run_msmw(s, warmup, n_iter, total_queue_length);
         break;
-    case Mode::LOG_MAX_PLUS_QUEUE_LENGTH:
-        this->run_log_max_plus_queue_length(
+    case Mode::MSMW_LOG:
+        this->run_msmw_log(
             s, warmup, n_iter, total_queue_length);
         break;
     }

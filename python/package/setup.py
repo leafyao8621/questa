@@ -7,10 +7,10 @@ simulator_base =\
         sources=[
             "questa/simulator/src/simulator/simulator.cpp",
             "questa/simulator/src/simulator/simulator_run/simulator_run.cpp",
-            "questa/simulator/src/simulator/simulator_run/simulator_run_queue_length.cpp",
-            "questa/simulator/src/simulator/simulator_run/simulator_run_max_minus_queue_length.cpp",
-            "questa/simulator/src/simulator/simulator_run/simulator_run_max_plus_queue_length.cpp",
-            "questa/simulator/src/simulator/simulator_run/simulator_run_log_max_plus_queue_length.cpp",
+            "questa/simulator/src/simulator/simulator_run/simulator_run_max_weight.cpp",
+            "questa/simulator/src/simulator/simulator_run/simulator_run_max_size.cpp",
+            "questa/simulator/src/simulator/simulator_run/simulator_run_msmw.cpp",
+            "questa/simulator/src/simulator/simulator_run/simulator_run_msmw_log.cpp",
             "questa/simulator/src/util/mrg32k3a.cpp",
             "questa/simulator/src/main.cpp"
         ],
@@ -24,10 +24,10 @@ runner_base =\
         sources=[
             "questa/runner/src/simulator/simulator.cpp",
             "questa/runner/src/simulator/simulator_run/simulator_run.cpp",
-            "questa/runner/src/simulator/simulator_run/simulator_run_queue_length.cpp",
-            "questa/runner/src/simulator/simulator_run/simulator_run_max_minus_queue_length.cpp",
-            "questa/runner/src/simulator/simulator_run/simulator_run_max_plus_queue_length.cpp",
-            "questa/runner/src/simulator/simulator_run/simulator_run_log_max_plus_queue_length.cpp",
+            "questa/runner/src/simulator/simulator_run/simulator_run_max_weight.cpp",
+            "questa/runner/src/simulator/simulator_run/simulator_run_max_size.cpp",
+            "questa/runner/src/simulator/simulator_run/simulator_run_msmw.cpp",
+            "questa/runner/src/simulator/simulator_run/simulator_run_msmw_log.cpp",
             "questa/runner/src/runner/runner.cpp",
             "questa/runner/src/util/mrg32k3a.cpp",
             "questa/runner/src/main.cpp"

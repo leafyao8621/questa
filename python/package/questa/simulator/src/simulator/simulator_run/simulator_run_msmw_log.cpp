@@ -2,7 +2,7 @@
 
 #include "../simulator.h"
 
-void QUESTA::Simulator::run_log_max_plus_queue_length(
+void QUESTA::Simulator::run_msmw_log(
     double s,
     size_t warmup,
     size_t n_iter,

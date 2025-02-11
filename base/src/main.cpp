@@ -17,7 +17,7 @@ int main() {
     try {
         QUESTA::Runner runner(32);
         runner(
-            QUESTA::Simulator::Mode::QUEUE_LENGTH,
+            QUESTA::Simulator::Mode::MAX_WEIGHT,
             s,
             54,
             1000000,

@@ -48,10 +48,9 @@ static PyObject* run(PyObject* self, PyObject* args) {
     }
     try {
         QUESTA::Runner runner(n_thread);
-        // simulator.init(n, seed);
-        if (!strcmp(mode, "QUEUE_LENGTH")) {
+        if (!strcmp(mode, "MAX_WEIGHT")) {
             runner(
-                QUESTA::Simulator::Mode::QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MAX_WEIGHT,
                 (double*)PyArray_DATA((PyArrayObject*)s),
                 s_len,
                 warmup,
@@ -60,9 +59,9 @@ static PyObject* run(PyObject* self, PyObject* args) {
                 seed,
                 (int*)PyArray_DATA((PyArrayObject*)total_queue_length)
             );
-        } else if (!strcmp(mode, "MAX_MINUS_QUEUE_LENGTH")) {
+        } else if (!strcmp(mode, "MAX_SIZE")) {
             runner(
-                QUESTA::Simulator::Mode::MAX_MINUS_QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MAX_SIZE,
                 (double*)PyArray_DATA((PyArrayObject*)s),
                 s_len,
                 warmup,
@@ -71,9 +70,9 @@ static PyObject* run(PyObject* self, PyObject* args) {
                 seed,
                 (int*)PyArray_DATA((PyArrayObject*)total_queue_length)
             );
-        } else if (!strcmp(mode, "MAX_PLUS_QUEUE_LENGTH")) {
+        } else if (!strcmp(mode, "MSMW")) {
             runner(
-                QUESTA::Simulator::Mode::MAX_PLUS_QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MSMW,
                 (double*)PyArray_DATA((PyArrayObject*)s),
                 s_len,
                 warmup,
@@ -82,9 +81,9 @@ static PyObject* run(PyObject* self, PyObject* args) {
                 seed,
                 (int*)PyArray_DATA((PyArrayObject*)total_queue_length)
             );
-        } else if (!strcmp(mode, "LOG_MAX_PLUS_QUEUE_LENGTH")) {
+        } else if (!strcmp(mode, "MSMW_LOG")) {
             runner(
-                QUESTA::Simulator::Mode::LOG_MAX_PLUS_QUEUE_LENGTH,
+                QUESTA::Simulator::Mode::MSMW_LOG,
                 (double*)PyArray_DATA((PyArrayObject*)s),
                 s_len,
                 warmup,

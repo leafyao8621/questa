@@ -72,4 +72,5 @@ def run_rep(
                 n_thread
             )
         )
+        seed += 1
     return numpy.array(out)
