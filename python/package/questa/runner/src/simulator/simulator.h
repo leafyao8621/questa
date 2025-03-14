@@ -1,16 +1,16 @@
 #ifndef SIMULATOR_SIMULATOR_H_
 #define SIMULATOR_SIMULATOR_H_
 
+#include <random>
+
 #include <lemon/list_graph.h>
 #include <lemon/matching.h>
-
-#include "../util/mrg32k3a.h"
 
 namespace QUESTA {
     class Simulator {
     private:
         lemon::ListGraph lg;
-        MRG32K3a gen;
+        std::mt19937 gen;
         size_t n;
     public:
         enum Mode {

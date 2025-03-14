@@ -29,7 +29,6 @@ runner_base =\
             "questa/runner/src/simulator/simulator_run/simulator_run_msmw.cpp",
             "questa/runner/src/simulator/simulator_run/simulator_run_msmw_log.cpp",
             "questa/runner/src/runner/runner.cpp",
-            "questa/runner/src/util/mrg32k3a.cpp",
             "questa/runner/src/main.cpp"
         ],
         include_dirs=[numpy.get_include()],

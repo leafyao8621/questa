@@ -29,7 +29,7 @@ void QUESTA::Simulator::run_msmw_log(
         }
         int max = 0;
         for (int j = 0; j <= this->lg.maxEdgeId(); ++j) {
-            int flag = this->gen() < (s / this->n);
+            int flag = (double)this->gen() / this->gen.max() < (s / this->n);
             em[this->lg.edgeFromId(j)] += flag;
             max =
                 em[this->lg.edgeFromId(j)] > max ?
@@ -56,7 +56,7 @@ void QUESTA::Simulator::run_msmw_log(
         }
         int max = 0;
         for (int j = 0; j <= this->lg.maxEdgeId(); ++j) {
-            int flag = this->gen() < (s / this->n);
+            int flag = (double)this->gen() / this->gen.max() < (s / this->n);
             em[this->lg.edgeFromId(j)] += flag;
             max =
                 em[this->lg.edgeFromId(j)] > max ?

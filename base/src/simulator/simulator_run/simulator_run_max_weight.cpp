@@ -21,7 +21,7 @@ void QUESTA::Simulator::run_max_weight(
         }
         std::cout << std::endl << "Arrival:" << std::endl;
         for (int j = 0; j <= this->lg.maxEdgeId(); ++j) {
-            int flag = this->gen() < (s / this->n);
+            int flag = (double)this->gen() / this->gen.max() < (s / this->n);
             em[this->lg.edgeFromId(j)] += flag;
             std::cout << em[this->lg.edgeFromId(j)] << ' ';
             cur_total_queue_length += flag;
@@ -40,8 +40,9 @@ void QUESTA::Simulator::run_max_weight(
             std::cout << em[this->lg.edgeFromId(j)] << ' ';
             cur_total_queue_length -= flag;
         }
+        std::cout << std::endl << "Arrival:" << std::endl;
         for (int j = 0; j <= this->lg.maxEdgeId(); ++j) {
-            int flag = this->gen() < (s / this->n);
+            int flag = (double)this->gen() / this->gen.max() < (s / this->n);
             em[this->lg.edgeFromId(j)] += flag;
             std::cout << em[this->lg.edgeFromId(j)] << ' ';
             cur_total_queue_length += flag;
