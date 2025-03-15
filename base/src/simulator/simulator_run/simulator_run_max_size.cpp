@@ -38,14 +38,9 @@ void QUESTA::Simulator::run_max_size(
             em[this->lg.edgeFromId(j)] -= flag;
             cur_total_queue_length -= flag;
         }
-        int max = 0;
         for (int j = 0; j <= this->lg.maxEdgeId(); ++j) {
             int flag = (double)this->gen() / this->gen.max() < (s / this->n);
             em[this->lg.edgeFromId(j)] += flag;
-            max =
-                em[this->lg.edgeFromId(j)] > max ?
-                em[this->lg.edgeFromId(j)] :
-                max;
             cur_total_queue_length += flag;
         }
         for (int j = 0; j <= this->lg.maxEdgeId(); ++j) {
