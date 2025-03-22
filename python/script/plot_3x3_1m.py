@@ -5,7 +5,7 @@ import matplotlib.pyplot
 if __name__ == "__main__":
     matplotlib.pyplot.rc('text', usetex=False)
     matplotlib.pyplot.rc('font', family='serif')
-
+    matplotlib.pyplot.rc('figure', figsize=(8, 8))
     data_3_1m_max_weight =\
         numpy.array([[1.00000000e-01, 3.22387600e-01, 3.22157086e-01, 3.22618114e-01],
             [2.00000000e-01, 6.99579700e-01, 6.99102977e-01, 7.00056423e-01],
@@ -232,7 +232,7 @@ if __name__ == "__main__":
         data_3_1m_max_size,
         data_3_1m_msmw,
         data_3_1m_msmw_log,
-        2,
+        3,
         (0, 50),
         "out/3x3_1m.pdf"
     )
@@ -241,7 +241,7 @@ if __name__ == "__main__":
         data_3_1m_max_size,
         data_3_1m_msmw,
         data_3_1m_msmw_log,
-        2,
+        3,
         (0.8, 0.99),
         "out/3x3_1m_scaled.pdf"
     )

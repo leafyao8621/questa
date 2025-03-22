@@ -5,7 +5,7 @@ import matplotlib.pyplot
 if __name__ == "__main__":
     matplotlib.pyplot.rc('text', usetex=False)
     matplotlib.pyplot.rc('font', family='serif')
-
+    matplotlib.pyplot.rc('figure', figsize=(8, 8))
     data_4_100m_max_weight =\
         numpy.array([[1.00000000e-01, 4.33293733e-01, 4.33014030e-01, 4.33573436e-01],
             [2.00000000e-01, 9.48492567e-01, 9.48041702e-01, 9.48943431e-01],
@@ -231,7 +231,7 @@ if __name__ == "__main__":
         data_4_100m_max_size,
         data_4_100m_msmw,
         data_4_100m_msmw_log,
-        2,
+        4,
         (0, 80),
         "out/4x4_100m.pdf"
     )
@@ -240,7 +240,7 @@ if __name__ == "__main__":
         data_4_100m_max_size,
         data_4_100m_msmw,
         data_4_100m_msmw_log,
-        2,
+        4,
         (0.8, 0.99),
         "out/4x4_100m_scaled.pdf"
     )

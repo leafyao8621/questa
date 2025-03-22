@@ -5,6 +5,7 @@ import matplotlib.pyplot
 if __name__ == "__main__":
     matplotlib.pyplot.rc('text', usetex=False)
     matplotlib.pyplot.rc('font', family='serif')
+    matplotlib.pyplot.rc('figure', figsize=(8, 8))
     data_2_1m_max_weight =\
         numpy.array([[1.00000000e-01, 2.11090800e-01, 2.10942779e-01, 2.11238821e-01],
             [2.00000000e-01, 4.49624500e-01, 4.49281084e-01, 4.49967916e-01],
