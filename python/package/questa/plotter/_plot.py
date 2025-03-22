@@ -118,8 +118,14 @@ def plot(
         fontsize=16
     )
     matplotlib.pyplot.ylim(ylim)
+    matplotlib.pyplot.subplots_adjust(
+        left=0.18, right=0.97, top=0.9, bottom=0.1
+    )
     matplotlib.pyplot.grid()
-    matplotlib.pyplot.legend()
+    matplotlib.pyplot.legend(fontsize=16)
+    if (out):
+        matplotlib.pyplot.savefig(out)
+        matplotlib.pyplot.clf()
 
 def plot_scaled(
     max_weight: numpy.ndarray,
@@ -236,6 +242,9 @@ def plot_scaled(
         fontsize=16
     )
     matplotlib.pyplot.xlim(xlim)
+    matplotlib.pyplot.subplots_adjust(
+        left=0.18, right=0.97, top=0.9, bottom=0.1
+    )
     matplotlib.pyplot.grid()
     matplotlib.pyplot.legend(fontsize=16)
     if (out):
