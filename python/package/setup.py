@@ -42,6 +42,7 @@ setup(
     packages=[
         "questa.simulator",
         "questa.runner",
+        "questa.plotter",
     ],
     ext_modules=[
         simulator_base,
